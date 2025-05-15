@@ -1,15 +1,15 @@
 import { join } from "path";
 import pkg from "./package.json";
 
-//https://nitro.unjs.io/config
 export default defineNitroConfig({
-  noPublicDir: true,
   compatibilityDate: "2025-04-20",
   srcDir: "./src",
+  publicAssets: [{ baseURL: "/", dir: "public" }],
   runtimeConfig: {
-    version: pkg.version
+    version: pkg.version,
   },
   alias: {
-    "@": join(__dirname, "src")
-  }
-});
+    "@": join(__dirname, "src"),
+  },
+})
+
